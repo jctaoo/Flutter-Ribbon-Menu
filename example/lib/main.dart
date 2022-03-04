@@ -1,5 +1,5 @@
 import 'package:bitsdojo_window/bitsdojo_window.dart';
-import 'custom_titlebarbox.dart';
+import 'word_style_titlebar.dart';
 import 'mainview.dart';
 import 'package:flutter/material.dart';
 
@@ -31,12 +31,13 @@ class MyApp extends StatelessWidget {
                 gradient: LinearGradient(
                   begin: Alignment.topCenter,
                   end: Alignment.bottomCenter,
-                  colors: [backgroudStartColor, backgroundEndColor],
+                  colors: [kBackgroudStartColor, kBackgroundEndColor],
                   stops: [0.0, 1.0],
                 )),
             child: Column(
               children: [
-                CustomWindowTitleBarBox(),
+                WordStyleTitleBar(),
+                Expanded(child: Container(color: Colors.amber))
               ],
             ),
           ),

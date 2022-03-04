@@ -34,11 +34,13 @@ class SmallRibbonButton extends StatelessWidget {
   final String label;
   final IconData icon;
   final bool isDropDown;
+  final Function()? onPressed;
 
   const SmallRibbonButton(
       {Key? key,
       required this.label,
       required this.icon,
+      this.onPressed,
       this.isDropDown = false})
       : super(key: key);
 
@@ -47,7 +49,7 @@ class SmallRibbonButton extends StatelessWidget {
     return SizedBox(
       height: 24.0,
       child: TextButton(
-        onPressed: () {},
+        onPressed: onPressed,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [

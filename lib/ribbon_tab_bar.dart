@@ -51,10 +51,8 @@ class _RibbonTabBarState extends State<RibbonTabBar> {
 
   @override
   Widget build(BuildContext context) {
-    return IntrinsicHeight(
-      child: Row(
-        children: _buildTabItems(),
-      ),
+    return Row(
+      children: _buildTabItems(),
     );
   }
 }

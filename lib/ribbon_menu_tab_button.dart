@@ -16,17 +16,18 @@ class RibbonMenuTabButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return DecoratedBox(
-      decoration: BoxDecoration(border: buildBorder()),
-      child: SizedBox(
-        height: 24.0,
-        child: TextButton(
-          child: Text(
-            text,
-            style: const TextStyle(fontSize: 11.5),
-          ),
-          onPressed: onPressed,
+    return Container(
+      height: 32,
+      decoration: BoxDecoration(
+          border: buildBorder(),
+          color: isSelected ? Colors.white : Colors.transparent),
+      child: TextButton(
+        child: Text(
+          text,
+          style: TextStyle(
+              fontSize: 12, color: isSelected ? Colors.black : Colors.white),
         ),
+        onPressed: onPressed,
       ),
     );
   }
@@ -35,12 +36,16 @@ class RibbonMenuTabButton extends StatelessWidget {
     if (isSelected) {
       return Border(
           left: isFirst
-              ? BorderSide.none
+              ? const BorderSide(color: Colors.transparent, width: 1)
               : const BorderSide(color: Colors.grey, width: 1),
           top: const BorderSide(color: Colors.grey, width: 1),
           right: const BorderSide(color: Colors.grey, width: 1));
     } else {
-      return const Border(bottom: BorderSide(color: Colors.grey, width: 1));
+      return const Border(
+          bottom: BorderSide(color: Colors.grey, width: 1),
+          left: BorderSide(color: Colors.transparent, width: 1),
+          top: BorderSide(color: Colors.transparent, width: 1),
+          right: BorderSide(color: Colors.transparent, width: 1));
     }
   }
 }
