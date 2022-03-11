@@ -5,12 +5,14 @@ class RibbonMenuTabButton extends StatelessWidget {
   final bool isFirst;
   final String text;
   final Function() onPressed;
+  final Color color;
 
   const RibbonMenuTabButton(
       {Key? key,
       required this.text,
       required this.isSelected,
       required this.onPressed,
+      this.color = Colors.transparent,
       this.isFirst = false})
       : super(key: key);
 
@@ -19,8 +21,7 @@ class RibbonMenuTabButton extends StatelessWidget {
     return Container(
       height: 32,
       decoration: BoxDecoration(
-          border: buildBorder(),
-          color: isSelected ? Colors.white : Colors.transparent),
+          border: buildBorder(), color: isSelected ? Colors.white : color),
       child: TextButton(
         child: Text(
           text,

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ribbon_menu/ribbon_application_menu.dart';
 
 import 'ribbon_menu_tab_button.dart';
 import 'ribbon_tab_controller.dart';
@@ -16,6 +17,9 @@ class RibbonTabBar extends StatefulWidget {
 }
 
 class _RibbonTabBarState extends State<RibbonTabBar> {
+  bool _applicationMenuIsShown = false;
+  OverlayEntry? _applicationMenuOverlay;
+
   @override
   void initState() {
     super.initState();
@@ -28,16 +32,49 @@ class _RibbonTabBarState extends State<RibbonTabBar> {
     widget.ribbonTabController.selectedIndex = index;
   }
 
+  OverlayEntry _createApplicationMenuOverlay() {
+    RenderBox renderbox = context.findRenderObject() as RenderBox;
+    var size = renderbox.size;
+    var offset = renderbox.localToGlobal(Offset.zero);
+
+    return OverlayEntry(
+      builder: (context) => Positioned(
+          left: offset.dx,
+          top: offset.dy,
+          child: RibbonApplicationMenu(
+            closeAction: _toggleApplicationMenuOverlay,
+          )),
+    );
+  }
+
+  void _toggleApplicationMenuOverlay() {
+    if (!_applicationMenuIsShown) {
+      _applicationMenuOverlay = _createApplicationMenuOverlay();
+      Overlay.of(context)?.insert(_applicationMenuOverlay!);
+      _applicationMenuIsShown = true;
+    } else if (_applicationMenuOverlay != null) {
+      _applicationMenuOverlay!.remove();
+      _applicationMenuIsShown = false;
+    }
+  }
+
   List<Widget> _buildTabItems() {
-    var list = List<Widget>.generate(
-        widget.tabTitles.length,
-        (index) => RibbonMenuTabButton(
-            text: widget.tabTitles[index],
-            isFirst: index == 0 ? true : false,
-            isSelected: index == widget.ribbonTabController.selectedIndex
-                ? true
-                : false,
-            onPressed: () => _selectTab(index)));
+    var list = List<Widget>.generate(widget.tabTitles.length, (index) {
+      return RibbonMenuTabButton(
+          text: widget.tabTitles[index],
+          isFirst: index == 0 ? true : false,
+          isSelected:
+              index == widget.ribbonTabController.selectedIndex ? true : false,
+          onPressed: () => _selectTab(index));
+    });
+
+    list[0] = RibbonMenuTabButton(
+        text: widget.tabTitles[0],
+        isSelected:
+            0 == widget.ribbonTabController.selectedIndex ? true : false,
+        onPressed: () {
+          _toggleApplicationMenuOverlay();
+        });
 
     list.add(Expanded(
       child: Container(

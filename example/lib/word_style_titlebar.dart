@@ -15,7 +15,7 @@ import 'window_buttons.dart';
 
 class WordStyleTitleBar extends StatelessWidget {
   final double titleBarHeight = 156;
-  final RibbonTabController controller = RibbonTabController(0);
+  final RibbonTabController controller = RibbonTabController(1);
 
   WordStyleTitleBar({Key? key}) : super(key: key);
 
