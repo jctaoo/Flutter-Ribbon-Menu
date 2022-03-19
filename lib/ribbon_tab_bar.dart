@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:ribbon_menu/ribbon_application_menu.dart';
 
+import 'ribbon_application_menu_button.dart';
 import 'ribbon_menu_tab_button.dart';
 import 'ribbon_tab_controller.dart';
 
@@ -43,6 +44,23 @@ class _RibbonTabBarState extends State<RibbonTabBar> {
           top: offset.dy,
           child: RibbonApplicationMenu(
             closeAction: _toggleApplicationMenuOverlay,
+            menuItems: [
+              RibbonApplicationMenuButton(
+                label: "Open new Window",
+                icon: const Icon(Icons.window_outlined),
+                onPressed: () {},
+              ),
+              RibbonApplicationMenuButton(
+                label: "Create new window",
+                icon: const Icon(Icons.code),
+                onPressed: () {},
+              ),
+            ],
+            auxiliaryPane: Container(
+                child: Text(
+              "Recent files",
+              style: TextStyle(fontSize: 12.0),
+            )),
           )),
     );
   }
