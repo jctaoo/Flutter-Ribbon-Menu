@@ -1,9 +1,8 @@
-import 'ribbon-tab-view.dart';
-import 'ribbon-tab.dart';
+import 'ribbon_tab_view.dart';
+import 'ribbon_tab.dart';
 import 'ribbon_button.dart';
 import 'ribbon_group.dart';
 import 'ribbon_small_button_column.dart';
-import 'ribbon_tab_bar.dart';
 import 'ribbon_tab_controller.dart';
 import 'package:flutter/material.dart';
 

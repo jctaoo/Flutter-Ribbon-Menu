@@ -35,7 +35,6 @@ class _RibbonTabBarState extends State<RibbonTabBar> {
 
   OverlayEntry _createApplicationMenuOverlay() {
     RenderBox renderbox = context.findRenderObject() as RenderBox;
-    var size = renderbox.size;
     var offset = renderbox.localToGlobal(Offset.zero);
 
     return OverlayEntry(
@@ -56,11 +55,10 @@ class _RibbonTabBarState extends State<RibbonTabBar> {
                 onPressed: () {},
               ),
             ],
-            auxiliaryPane: Container(
-                child: Text(
+            auxiliaryPane: const Text(
               "Recent files",
               style: TextStyle(fontSize: 12.0),
-            )),
+            ),
           )),
     );
   }

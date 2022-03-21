@@ -25,7 +25,7 @@ class RibbonApplicationMenuButton extends StatelessWidget {
             child: Row(
               children: [
                 icon,
-                SizedBox(
+                const SizedBox(
                   width: 16.0,
                 ),
                 Text(label),

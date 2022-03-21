@@ -9,7 +9,7 @@ class RibbonApplicationMenu extends StatefulWidget {
   final List<RibbonApplicationMenuButton> menuItems;
   final Widget? auxiliaryPane;
 
-  RibbonApplicationMenu(
+  const RibbonApplicationMenu(
       {Key? key,
       required this.closeAction,
       required this.menuItems,
@@ -26,18 +26,19 @@ class _RibbonApplicationMenuState extends State<RibbonApplicationMenu> {
 
   @override
   void initState() {
+    super.initState();
     auxiliaryPane = widget.auxiliaryPane;
 
     for (var item in widget.menuItems) {
       menuItems.add(RibbonApplicationMenuDropdownButton(
           icon: item.icon,
           label: item.label,
-          items: [],
+          items: const [],
           onPressed: item.onPressed,
           onMouseEnter: () {
             setState(() {
               auxiliaryPane = Container(
-                  decoration: BoxDecoration(boxShadow: [
+                  decoration: const BoxDecoration(boxShadow: [
                     BoxShadow(
                         color: Colors.grey,
                         blurRadius: 2.0,
@@ -46,7 +47,7 @@ class _RibbonApplicationMenuState extends State<RibbonApplicationMenu> {
                   ]),
                   height: 100,
                   width: 100,
-                  child: Text("Container"));
+                  child: const Text("Container"));
             });
           }));
     }
@@ -64,7 +65,7 @@ class _RibbonApplicationMenuState extends State<RibbonApplicationMenu> {
             text: "File",
             isSelected: false,
             onPressed: widget.closeAction,
-            color: Color.fromARGB(255, 43, 87, 154),
+            color: const Color.fromARGB(255, 43, 87, 154),
           ),
           Row(
             crossAxisAlignment: CrossAxisAlignment.start,

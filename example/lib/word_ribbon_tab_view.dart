@@ -1,7 +1,6 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:ribbon_menu/ribbon-tab-view.dart';
-import 'package:ribbon_menu/ribbon-tab.dart';
+import 'package:ribbon_menu/ribbon_tab_view.dart';
+import 'package:ribbon_menu/ribbon_tab.dart';
 import 'package:ribbon_menu/ribbon_button.dart';
 import 'package:ribbon_menu/ribbon_group.dart';
 import 'package:ribbon_menu/ribbon_small_button_column.dart';
