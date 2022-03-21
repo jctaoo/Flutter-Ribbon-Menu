@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:ribbon_menu/ribbon_application_menu_auxiliary_pane_notifier.dart';
 import 'package:ribbon_menu/ribbon_application_menu_dropdown_item.dart';
+import 'package:provider/provider.dart';
 
 class RibbonApplicationMenuDropdownButton extends StatelessWidget {
   final String label;
@@ -21,7 +23,7 @@ class RibbonApplicationMenuDropdownButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return MouseRegion(
       onEnter: (a) {
-        // TODO: Set state of RibbonApplicationMenu to show auxiliary pane.
+        Provider.of<AuxiliaryPaneNotifier>(context, listen: false).setAuxiliaryPane(Column(children: items,));
       },
       child: TextButton(
           onPressed: onPressed,
