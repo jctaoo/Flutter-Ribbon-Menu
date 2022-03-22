@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ribbon_menu/ribbon_application_menu_toggle.dart';
 
 import 'ribbon_menu_tab_button.dart';
 import 'ribbon_tab_controller.dart';
@@ -9,7 +10,10 @@ class RibbonTabBar extends StatefulWidget {
   final Widget? applicationMenu;
 
   const RibbonTabBar(
-      {Key? key, required this.tabTitles, required this.ribbonTabController, this.applicationMenu})
+      {Key? key,
+      required this.tabTitles,
+      required this.ribbonTabController,
+      this.applicationMenu})
       : super(key: key);
 
   @override
@@ -40,20 +44,23 @@ class _RibbonTabBarState extends State<RibbonTabBar> {
       builder: (context) => Positioned(
           left: offset.dx,
           top: offset.dy,
-          child: widget.applicationMenu!),
+          child: ApplicationMenuToggle(
+            child: widget.applicationMenu!,
+            closeFunction: _toggleApplicationMenuOverlay,
+          )),
     );
   }
 
   void _toggleApplicationMenuOverlay() {
     if (widget.applicationMenu != null) {
       if (!_applicationMenuIsShown) {
-            _applicationMenuOverlay = _createApplicationMenuOverlay();
-            Overlay.of(context)?.insert(_applicationMenuOverlay!);
-            _applicationMenuIsShown = true;
-          } else if (_applicationMenuOverlay != null) {
-            _applicationMenuOverlay!.remove();
-            _applicationMenuIsShown = false;
-          }
+        _applicationMenuOverlay = _createApplicationMenuOverlay();
+        Overlay.of(context)?.insert(_applicationMenuOverlay!);
+        _applicationMenuIsShown = true;
+      } else if (_applicationMenuOverlay != null) {
+        _applicationMenuOverlay!.remove();
+        _applicationMenuIsShown = false;
+      }
     }
   }
 

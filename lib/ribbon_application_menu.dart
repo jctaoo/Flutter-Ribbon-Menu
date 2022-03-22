@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:ribbon_menu/application_menu_button_interface.dart';
 import 'package:ribbon_menu/ribbon_application_menu_auxiliary_pane_notifier.dart';
+import 'package:ribbon_menu/ribbon_application_menu_toggle.dart';
 import 'package:ribbon_menu/ribbon_menu_tab_button.dart';
 
 class RibbonApplicationMenu extends StatefulWidget {
@@ -44,7 +45,9 @@ class _RibbonApplicationMenuState extends State<RibbonApplicationMenu> {
               RibbonMenuTabButton(
                 text: "File",
                 isSelected: false,
-                onPressed: widget.closeAction,
+                onPressed: () {
+                  ApplicationMenuToggle.of(context).closeFunction();
+                },
                 color: const Color.fromARGB(255, 43, 87, 154),
               ),
               Row(
