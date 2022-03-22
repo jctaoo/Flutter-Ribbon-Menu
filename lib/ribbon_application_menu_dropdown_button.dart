@@ -3,11 +3,15 @@ import 'package:ribbon_menu/ribbon_application_menu_auxiliary_pane_notifier.dart
 import 'package:ribbon_menu/ribbon_application_menu_dropdown_item.dart';
 import 'package:provider/provider.dart';
 
-class RibbonApplicationMenuDropdownButton extends StatelessWidget {
+import 'application_menu_button_interface.dart';
+
+class RibbonApplicationMenuDropdownButton extends StatelessWidget implements IApplicationMenuButton{
+  @override
   final String label;
+  @override
   final Function()? onPressed;
+  @override
   final Icon icon;
-  final Function()? onMouseEnter;
   final List<RibbonApplicationMenuDropdownItem> items;
 
   const RibbonApplicationMenuDropdownButton(
@@ -15,7 +19,6 @@ class RibbonApplicationMenuDropdownButton extends StatelessWidget {
       this.label = "",
       this.onPressed,
       required this.icon,
-      this.onMouseEnter,
       required this.items})
       : super(key: key);
 

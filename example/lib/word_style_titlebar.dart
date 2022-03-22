@@ -1,4 +1,5 @@
 import 'package:bitsdojo_window/bitsdojo_window.dart';
+import 'package:example/word_application_menu.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:ribbon_menu/ribbon_tab_bar.dart';
@@ -88,6 +89,7 @@ class WordStyleTitleBar extends StatelessWidget {
                         IntrinsicHeight(
                           child: RibbonTabBar(
                               ribbonTabController: controller,
+                              applicationMenu: const WordApplicationMenu(),
                               tabTitles: const ["File", "Start", "Paste"]),
                         )
                       ],

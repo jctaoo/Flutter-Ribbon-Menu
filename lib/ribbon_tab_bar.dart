@@ -1,16 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:ribbon_menu/ribbon_application_menu.dart';
 
-import 'ribbon_application_menu_button.dart';
 import 'ribbon_menu_tab_button.dart';
 import 'ribbon_tab_controller.dart';
 
 class RibbonTabBar extends StatefulWidget {
   final List<String> tabTitles;
   final RibbonTabController ribbonTabController;
+  final Widget? applicationMenu;
 
   const RibbonTabBar(
-      {Key? key, required this.tabTitles, required this.ribbonTabController})
+      {Key? key, required this.tabTitles, required this.ribbonTabController, this.applicationMenu})
       : super(key: key);
 
   @override
@@ -41,36 +40,20 @@ class _RibbonTabBarState extends State<RibbonTabBar> {
       builder: (context) => Positioned(
           left: offset.dx,
           top: offset.dy,
-          child: RibbonApplicationMenu(
-            closeAction: _toggleApplicationMenuOverlay,
-            menuItems: [
-              RibbonApplicationMenuButton(
-                label: "Open new Window",
-                icon: const Icon(Icons.window_outlined),
-                onPressed: () {},
-              ),
-              RibbonApplicationMenuButton(
-                label: "Create new window",
-                icon: const Icon(Icons.code),
-                onPressed: () {},
-              ),
-            ],
-            auxiliaryPane: const Text(
-              "Recent files",
-              style: TextStyle(fontSize: 12.0),
-            ),
-          )),
+          child: widget.applicationMenu!),
     );
   }
 
   void _toggleApplicationMenuOverlay() {
-    if (!_applicationMenuIsShown) {
-      _applicationMenuOverlay = _createApplicationMenuOverlay();
-      Overlay.of(context)?.insert(_applicationMenuOverlay!);
-      _applicationMenuIsShown = true;
-    } else if (_applicationMenuOverlay != null) {
-      _applicationMenuOverlay!.remove();
-      _applicationMenuIsShown = false;
+    if (widget.applicationMenu != null) {
+      if (!_applicationMenuIsShown) {
+            _applicationMenuOverlay = _createApplicationMenuOverlay();
+            Overlay.of(context)?.insert(_applicationMenuOverlay!);
+            _applicationMenuIsShown = true;
+          } else if (_applicationMenuOverlay != null) {
+            _applicationMenuOverlay!.remove();
+            _applicationMenuIsShown = false;
+          }
     }
   }
 

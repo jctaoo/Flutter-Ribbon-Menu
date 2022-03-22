@@ -1,11 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:ribbon_menu/application_menu_button_interface.dart';
 import 'package:ribbon_menu/ribbon_application_menu_auxiliary_pane_notifier.dart';
 
-class RibbonApplicationMenuButton extends StatelessWidget {
+/// Provides a standard button for the application menu.
+///
+/// [onEnter] provides a function that should run when the mouse enters the widget.
+/// This could be used to show a custom auxiliary pane.
+class RibbonApplicationMenuButton extends StatelessWidget implements IApplicationMenuButton {
+  @override
   final String label;
+  @override
   final Function()? onPressed;
   final Function()? onEnter;
+  @override
   final Icon icon;
 
   const RibbonApplicationMenuButton({
