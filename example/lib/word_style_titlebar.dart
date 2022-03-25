@@ -97,7 +97,7 @@ class WordStyleTitleBar extends StatelessWidget {
                   ),
                   Expanded(
                       child: Container(
-                    color: Colors.white,
+                    color: Colors.red,
                   ))
                 ],
               ))),

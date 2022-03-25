@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:ribbon_menu/ribbon_tab_view.dart';
 import 'package:ribbon_menu/ribbon_tab.dart';
-import 'package:ribbon_menu/ribbon_button.dart';
+import 'package:ribbon_menu/buttons/ribbon_button.dart';
 import 'package:ribbon_menu/ribbon_group.dart';
 import 'package:ribbon_menu/ribbon_small_button_column.dart';
 import 'package:ribbon_menu/ribbon_tab_controller.dart';

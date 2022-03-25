@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:ribbon_menu/ribbon_application_menu_toggle.dart';
+import 'package:ribbon_menu/buttons/ribbon_application_menu_toggle.dart';
 
-import 'ribbon_menu_tab_button.dart';
+import 'buttons/ribbon_menu_tab_button.dart';
 import 'ribbon_tab_controller.dart';
 
 class RibbonTabBar extends StatefulWidget {

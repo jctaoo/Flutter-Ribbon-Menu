@@ -112,10 +112,15 @@ class _LargeRibbonDropdownButtonState extends State<LargeRibbonDropdownButton> {
 
   @override
   Widget build(BuildContext context) {
-    return LargeRibbonButton(
-        isDropDown: true,
-        onPressed: _toggleOverlay,
-        label: widget.label,
-        icon: Icon(widget.icon));
+    return Column(
+      children: [
+        LargeRibbonButton(
+            isDropDown: true,
+            onPressed: _toggleOverlay,
+            label: widget.label,
+            icon: Icon(widget.icon)),
+        const Icon(Icons.arrow_drop_down)
+      ],
+    );
   }
 }

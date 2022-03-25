@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:ribbon_menu/application_menu_button_interface.dart';
+import 'package:ribbon_menu/buttons/application_menu_button_interface.dart';
 import 'package:ribbon_menu/ribbon_application_menu_auxiliary_pane_notifier.dart';
-import 'package:ribbon_menu/ribbon_application_menu_toggle.dart';
-import 'package:ribbon_menu/ribbon_menu_tab_button.dart';
+import 'package:ribbon_menu/buttons/ribbon_application_menu_toggle.dart';
+import 'package:ribbon_menu/buttons/ribbon_menu_tab_button.dart';
 
 class RibbonApplicationMenu extends StatefulWidget {
   final Function() closeAction;

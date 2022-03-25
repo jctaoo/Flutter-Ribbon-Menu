@@ -1,6 +1,6 @@
 import 'ribbon_tab_view.dart';
 import 'ribbon_tab.dart';
-import 'ribbon_button.dart';
+import 'buttons/ribbon_button.dart';
 import 'ribbon_group.dart';
 import 'ribbon_small_button_column.dart';
 import 'ribbon_tab_controller.dart';

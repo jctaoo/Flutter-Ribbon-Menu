@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:ribbon_menu/ribbon_application_menu_auxiliary_pane_notifier.dart';
-import 'package:ribbon_menu/ribbon_application_menu_dropdown_item.dart';
+import 'package:ribbon_menu/buttons/ribbon_application_menu_dropdown_item.dart';
 import 'package:provider/provider.dart';
 
-import 'application_menu_button_interface.dart';
+import 'package:ribbon_menu/buttons/application_menu_button_interface.dart';
 
 class RibbonApplicationMenuDropdownButton extends StatelessWidget implements IApplicationMenuButton{
   @override
@@ -39,6 +39,8 @@ class RibbonApplicationMenuDropdownButton extends StatelessWidget implements IAp
                   width: 16.0,
                 ),
                 Text(label),
+                const Spacer(),
+                const Icon(Icons.arrow_right),
               ],
             ),
           )),

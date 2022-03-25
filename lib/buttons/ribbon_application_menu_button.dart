@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:ribbon_menu/application_menu_button_interface.dart';
+import 'package:ribbon_menu/buttons/application_menu_button_interface.dart';
 import 'package:ribbon_menu/ribbon_application_menu_auxiliary_pane_notifier.dart';
 
 /// Provides a standard button for the application menu.
@@ -12,9 +12,9 @@ class RibbonApplicationMenuButton extends StatelessWidget implements IApplicatio
   final String label;
   @override
   final Function()? onPressed;
-  final Function()? onEnter;
   @override
   final Icon icon;
+  final Function()? onEnter;
 
   const RibbonApplicationMenuButton({
     Key? key,
