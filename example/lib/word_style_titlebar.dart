@@ -1,5 +1,6 @@
 import 'package:bitsdojo_window/bitsdojo_window.dart';
 import 'package:example/word_application_menu.dart';
+import 'package:example/word_ribbon_tab_view.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:ribbon_menu/ribbon_tab_bar.dart';
@@ -10,7 +11,7 @@ import 'window_buttons.dart';
 
 class WordStyleTitleBar extends StatelessWidget {
   final double titleBarHeight = 156;
-  final RibbonTabController controller = RibbonTabController(1);
+  final RibbonTabController controller = RibbonTabController(0);
 
   WordStyleTitleBar({Key? key}) : super(key: key);
 
@@ -96,9 +97,8 @@ class WordStyleTitleBar extends StatelessWidget {
                     ),
                   ),
                   Expanded(
-                      child: Container(
-                    color: Colors.red,
-                  ))
+                      child: WordRibbonTabView(controller: controller,),
+                  )
                 ],
               ))),
     );

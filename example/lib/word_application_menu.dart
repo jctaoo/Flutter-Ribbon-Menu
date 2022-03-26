@@ -9,7 +9,10 @@ class WordApplicationMenu extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return RibbonApplicationMenu(closeAction: () {}, menuItems: [
+    return RibbonApplicationMenu(
+      buttonLabel: "File",
+        closeAction: () {},
+        menuItems: [
       RibbonApplicationMenuDropdownButton(
         onPressed: () {},
           icon: const Icon(Icons.window),

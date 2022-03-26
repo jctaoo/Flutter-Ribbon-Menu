@@ -1,19 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:ribbon_menu/buttons/application_menu_button_interface.dart';
-import 'package:ribbon_menu/ribbon_application_menu_auxiliary_pane_notifier.dart';
 import 'package:ribbon_menu/buttons/ribbon_application_menu_toggle.dart';
 import 'package:ribbon_menu/buttons/ribbon_menu_tab_button.dart';
+import 'package:ribbon_menu/ribbon_application_menu_auxiliary_pane_notifier.dart';
 
 class RibbonApplicationMenu extends StatefulWidget {
   final Function() closeAction;
   final List<IApplicationMenuButton> menuItems;
   final Widget? auxiliaryPane;
+  final String buttonLabel;
 
   const RibbonApplicationMenu(
       {Key? key,
       required this.closeAction,
       required this.menuItems,
+      required this.buttonLabel,
       this.auxiliaryPane})
       : super(key: key);
 
@@ -43,7 +45,7 @@ class _RibbonApplicationMenuState extends State<RibbonApplicationMenu> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               RibbonMenuTabButton(
-                text: "File",
+                text: widget.buttonLabel,
                 isSelected: false,
                 onPressed: () {
                   ApplicationMenuToggle.of(context).closeFunction();

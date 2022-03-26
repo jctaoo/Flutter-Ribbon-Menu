@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:ribbon_menu/buttons/ribbon_application_menu_toggle.dart';
+import 'package:ribbon_menu/ribbon_application_menu.dart';
+import 'package:ribbon_menu/ribbon_menu.dart';
 
 import 'buttons/ribbon_menu_tab_button.dart';
 import 'ribbon_tab_controller.dart';
@@ -65,31 +67,24 @@ class _RibbonTabBarState extends State<RibbonTabBar> {
   }
 
   List<Widget> _buildTabItems() {
-    var list = List<Widget>.generate(widget.tabTitles.length, (index) {
-      return RibbonMenuTabButton(
-          text: widget.tabTitles[index],
-          isFirst: index == 0 ? true : false,
-          isSelected:
-              index == widget.ribbonTabController.selectedIndex ? true : false,
-          onPressed: () => _selectTab(index));
-    });
+    var newList = List<Widget>.empty(growable: true);
 
-    list[0] = RibbonMenuTabButton(
-        text: widget.tabTitles[0],
-        isSelected:
-            0 == widget.ribbonTabController.selectedIndex ? true : false,
-        onPressed: () {
-          _toggleApplicationMenuOverlay();
-        });
+    if(widget.applicationMenu != null) {
+      newList.add(RibbonMenuTabButton(text: widget.tabTitles[0], isSelected: false, onPressed: _toggleApplicationMenuOverlay));
+    }
 
-    list.add(Expanded(
+    for(int i = 1; i < widget.tabTitles.length; i++) {
+      newList.add(RibbonMenuTabButton(text: widget.tabTitles[i], isSelected: widget.ribbonTabController.selectedIndex == i - 1, onPressed: () => _selectTab(i - 1)));
+    }
+
+    newList.add(Expanded(
       child: Container(
           decoration: const BoxDecoration(
               border:
                   Border(bottom: BorderSide(color: Colors.grey, width: 1)))),
     ));
 
-    return list;
+    return newList;
   }
 
   @override

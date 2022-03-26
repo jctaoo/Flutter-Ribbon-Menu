@@ -119,7 +119,6 @@ class _LargeRibbonDropdownButtonState extends State<LargeRibbonDropdownButton> {
             onPressed: _toggleOverlay,
             label: widget.label,
             icon: Icon(widget.icon)),
-        const Icon(Icons.arrow_drop_down)
       ],
     );
   }
