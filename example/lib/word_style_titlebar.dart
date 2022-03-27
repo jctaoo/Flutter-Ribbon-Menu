@@ -20,8 +20,10 @@ class WordStyleTitleBar extends StatelessWidget {
         textTheme: Theme.of(context)
             .textTheme
             .apply(bodyColor: Colors.white, displayColor: Colors.white),
+        textButtonTheme: const TextButtonThemeData(),
         buttonTheme: const ButtonThemeData(
           textTheme: ButtonTextTheme.primary,
+          splashColor: Colors.red,
         ));
   }
 
