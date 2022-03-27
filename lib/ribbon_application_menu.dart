@@ -1,23 +1,23 @@
-import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
-import 'package:ribbon_menu/buttons/application_menu_button_interface.dart';
-import 'package:ribbon_menu/buttons/ribbon_application_menu_toggle.dart';
-import 'package:ribbon_menu/buttons/ribbon_menu_tab_button.dart';
-import 'package:ribbon_menu/ribbon_application_menu_auxiliary_pane_notifier.dart';
+import "package:flutter/material.dart";
+import "package:provider/provider.dart";
+import "package:ribbon_menu/buttons/application_menu_button_interface.dart";
+import "package:ribbon_menu/buttons/ribbon_application_menu_toggle.dart";
+import "package:ribbon_menu/buttons/ribbon_menu_tab_button.dart";
+import "package:ribbon_menu/ribbon_application_menu_auxiliary_pane_notifier.dart";
 
 class RibbonApplicationMenu extends StatefulWidget {
+  const RibbonApplicationMenu({
+    required this.closeAction,
+    required this.menuItems,
+    required this.buttonLabel,
+    this.auxiliaryPane,
+    Key? key,
+  }) : super(key: key);
+
   final Function() closeAction;
   final List<IApplicationMenuButton> menuItems;
   final Widget? auxiliaryPane;
   final String buttonLabel;
-
-  const RibbonApplicationMenu(
-      {Key? key,
-      required this.closeAction,
-      required this.menuItems,
-      required this.buttonLabel,
-      this.auxiliaryPane})
-      : super(key: key);
 
   @override
   State<RibbonApplicationMenu> createState() => _RibbonApplicationMenuState();
@@ -56,13 +56,10 @@ class _RibbonApplicationMenuState extends State<RibbonApplicationMenu> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Flexible(
-                      flex: 1,
                       child: Column(
-                        mainAxisAlignment: MainAxisAlignment.start,
                         children: widget.menuItems,
-                      )),
+                      ),),
                   Flexible(
-                    flex: 1,
                     child: auxiliaryPaneNotifier.auxiliaryPane,
                   )
                 ],
@@ -70,7 +67,7 @@ class _RibbonApplicationMenuState extends State<RibbonApplicationMenu> {
             ],
           ),
         );
-      }),
+      },),
     );
   }
 }

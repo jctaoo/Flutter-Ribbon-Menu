@@ -1,34 +1,34 @@
-import 'package:flutter/material.dart';
+import "package:flutter/material.dart";
 
 class RibbonMenuTabButton extends StatelessWidget {
+  const RibbonMenuTabButton({
+    required this.text,
+    required this.isSelected,
+    required this.onPressed,
+    this.color = Colors.transparent,
+    this.isFirst = false,
+    Key? key,
+  }) : super(key: key);
+
   final bool isSelected;
   final bool isFirst;
   final String text;
   final Function() onPressed;
   final Color color;
 
-  const RibbonMenuTabButton(
-      {Key? key,
-      required this.text,
-      required this.isSelected,
-      required this.onPressed,
-      this.color = Colors.transparent,
-      this.isFirst = false})
-      : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     return Container(
       height: 32,
       decoration: BoxDecoration(
-          border: buildBorder(), color: isSelected ? Colors.white : color),
+          border: buildBorder(), color: isSelected ? Colors.white : color,),
       child: TextButton(
+        onPressed: onPressed,
         child: Text(
           text,
           style: TextStyle(
-              fontSize: 12, color: isSelected ? Colors.black : Colors.white),
+              fontSize: 12, color: isSelected ? Colors.black : Colors.white,),
         ),
-        onPressed: onPressed,
       ),
     );
   }
@@ -37,16 +37,16 @@ class RibbonMenuTabButton extends StatelessWidget {
     if (isSelected) {
       return Border(
           left: isFirst
-              ? const BorderSide(color: Colors.transparent, width: 1)
-              : const BorderSide(color: Colors.grey, width: 1),
-          top: const BorderSide(color: Colors.grey, width: 1),
-          right: const BorderSide(color: Colors.grey, width: 1));
+              ? const BorderSide(color: Colors.transparent)
+              : const BorderSide(color: Colors.grey),
+          top: const BorderSide(color: Colors.grey),
+          right: const BorderSide(color: Colors.grey),);
     } else {
       return const Border(
-          bottom: BorderSide(color: Colors.grey, width: 1),
-          left: BorderSide(color: Colors.transparent, width: 1),
-          top: BorderSide(color: Colors.transparent, width: 1),
-          right: BorderSide(color: Colors.transparent, width: 1));
+          bottom: BorderSide(color: Colors.grey),
+          left: BorderSide(color: Colors.transparent),
+          top: BorderSide(color: Colors.transparent),
+          right: BorderSide(color: Colors.transparent),);
     }
   }
 }

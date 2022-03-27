@@ -1,13 +1,13 @@
-import 'package:flutter/material.dart';
+import "package:flutter/material.dart";
 
 class RibbonApplicationMenuDropdownItem extends StatelessWidget {
+  const RibbonApplicationMenuDropdownItem(
+      {required this.icon, required this.label, Key? key, this.onPressed,})
+      : super(key: key);
+
   final Function()? onPressed;
   final Widget icon;
   final String label;
-
-  const RibbonApplicationMenuDropdownItem(
-      {Key? key, this.onPressed, required this.icon, required this.label})
-      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -19,11 +19,11 @@ class RibbonApplicationMenuDropdownItem extends StatelessWidget {
             children: [
               icon,
               const SizedBox(
-                width: 16.0,
+                width: 16,
               ),
               Text(label),
             ],
           ),
-        ));
+        ),);
   }
 }

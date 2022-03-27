@@ -1,13 +1,23 @@
-import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
-import 'package:ribbon_menu/buttons/application_menu_button_interface.dart';
-import 'package:ribbon_menu/ribbon_application_menu_auxiliary_pane_notifier.dart';
+import "package:flutter/material.dart";
+import "package:provider/provider.dart";
+import "package:ribbon_menu/buttons/application_menu_button_interface.dart";
+import "package:ribbon_menu/ribbon_application_menu_auxiliary_pane_notifier.dart";
 
 /// Provides a standard button for the application menu.
 ///
-/// [onEnter] provides a function that should run when the mouse enters the widget.
+/// [onEnter] provides a function that should run when the mouse enters the
+/// widget.
 /// This could be used to show a custom auxiliary pane.
-class RibbonApplicationMenuButton extends StatelessWidget implements IApplicationMenuButton {
+class RibbonApplicationMenuButton extends StatelessWidget
+    implements IApplicationMenuButton {
+  const RibbonApplicationMenuButton({
+    required this.icon,
+    Key? key,
+    this.label = "",
+    this.onPressed,
+    this.onEnter,
+  }) : super(key: key);
+
   @override
   final String label;
   @override
@@ -16,19 +26,13 @@ class RibbonApplicationMenuButton extends StatelessWidget implements IApplicatio
   final Icon icon;
   final Function()? onEnter;
 
-  const RibbonApplicationMenuButton({
-    Key? key,
-    this.label = "",
-    this.onPressed,
-    required this.icon, this.onEnter,
-  }) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     return MouseRegion(
       onEnter: (a) {
-        if(onEnter == null) {
-          Provider.of<AuxiliaryPaneNotifier>(context, listen: false).resetAuxiliaryPane();
+        if (onEnter == null) {
+          Provider.of<AuxiliaryPaneNotifier>(context, listen: false)
+              .resetAuxiliaryPane();
         }
       },
       child: TextButton(
@@ -39,12 +43,12 @@ class RibbonApplicationMenuButton extends StatelessWidget implements IApplicatio
               children: [
                 icon,
                 const SizedBox(
-                  width: 16.0,
+                  width: 16,
                 ),
                 Text(label),
               ],
             ),
-          )),
+          ),),
     );
   }
 }

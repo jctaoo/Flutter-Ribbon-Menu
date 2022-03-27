@@ -1,17 +1,19 @@
-import 'package:flutter/material.dart';
+import "package:flutter/material.dart";
 
 class ApplicationMenuToggle extends InheritedWidget {
+  const ApplicationMenuToggle(
+      {required Widget child, required this.closeFunction, Key? key,})
+      : super(key: key, child: child);
+
   final Function() closeFunction;
 
-  const ApplicationMenuToggle({Key? key, required Widget child, required this.closeFunction}) : super(key: key, child: child);
-
   static ApplicationMenuToggle of(BuildContext context) {
-    final ApplicationMenuToggle? result = context.dependOnInheritedWidgetOfExactType<ApplicationMenuToggle>();
-    assert(result != null, 'No ApplicationMenuToggle found in context');
+    var result =
+        context.dependOnInheritedWidgetOfExactType<ApplicationMenuToggle>();
+    assert(result != null, "No ApplicationMenuToggle found in context");
     return result!;
   }
 
   @override
   bool updateShouldNotify(covariant ApplicationMenuToggle oldWidget) => true;
-
 }

@@ -1,15 +1,16 @@
-import 'ribbon_tab_view.dart';
-import 'ribbon_tab.dart';
-import 'buttons/ribbon_button.dart';
-import 'ribbon_group.dart';
-import 'ribbon_small_button_column.dart';
-import 'ribbon_tab_controller.dart';
-import 'package:flutter/material.dart';
+import "package:flutter/material.dart";
+
+import "package:ribbon_menu/buttons/ribbon_button.dart";
+import "package:ribbon_menu/ribbon_group.dart";
+import "package:ribbon_menu/ribbon_small_button_column.dart";
+import "package:ribbon_menu/ribbon_tab.dart";
+import "package:ribbon_menu/ribbon_tab_controller.dart";
+import "package:ribbon_menu/ribbon_tab_view.dart";
 
 class RibbonMenu extends StatelessWidget {
-  final RibbonTabController controller = RibbonTabController(0);
-
   RibbonMenu({Key? key}) : super(key: key);
+
+  final RibbonTabController controller = RibbonTabController(0);
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +22,7 @@ class RibbonMenu extends StatelessWidget {
           return Colors.grey;
         }
         return Colors.black;
-      })))),
+      }),),),),
       child: Column(
         children: [
           Expanded(
@@ -33,9 +34,9 @@ class RibbonMenu extends StatelessWidget {
                     groupTitle: "First Group",
                     children: [
                       LargeRibbonButton(
-                          label: "Alarm", icon: Icon(Icons.alarm)),
+                          label: "Alarm", icon: Icon(Icons.alarm),),
                       LargeRibbonButton(
-                          label: "Publish", icon: Icon(Icons.publish))
+                          label: "Publish", icon: Icon(Icons.publish),)
                     ],
                   ),
                   RibbonGroup(groupTitle: "Clipboard", children: [
@@ -47,10 +48,10 @@ class RibbonMenu extends StatelessWidget {
                           icon: Icons.copy,
                         ),
                         SmallRibbonButton(
-                            label: "Very long button", icon: Icons.paste)
+                            label: "Very long button", icon: Icons.paste,)
                       ],
                     ),
-                  ]),
+                  ],),
                   RibbonGroup(groupTitle: "Dropdown Test", children: [
                     LargeRibbonDropdownButton(
                         icon: Icons.luggage_rounded,
@@ -58,22 +59,22 @@ class RibbonMenu extends StatelessWidget {
                         child: RibbonSmallButtonColumn(
                           decoration: BoxDecoration(
                               color: Colors.white,
-                              border: Border.all(color: Colors.grey)),
+                              border: Border.all(color: Colors.grey),),
                           children: const [
                             SmallRibbonButton(
-                                label: "Item 1", icon: Icons.kayaking),
+                                label: "Item 1", icon: Icons.kayaking,),
                             SmallRibbonButton(
-                                label: "Item 2", icon: Icons.sports)
+                                label: "Item 2", icon: Icons.sports,)
                           ],
-                        )),
-                  ])
-                ]),
+                        ),),
+                  ],)
+                ],),
                 const RibbonTab(children: [
                   SmallRibbonButton(
                     label: "Empty Page",
                     icon: Icons.pageview_outlined,
                   )
-                ]),
+                ],),
               ],
             ),
           )

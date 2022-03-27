@@ -1,7 +1,7 @@
-import 'package:bitsdojo_window/bitsdojo_window.dart';
-import 'word_style_titlebar.dart';
-import 'mainview.dart';
-import 'package:flutter/material.dart';
+import "package:bitsdojo_window/bitsdojo_window.dart";
+import "package:example/mainview.dart";
+import "package:example/word_style_titlebar.dart";
+import "package:flutter/material.dart";
 
 const borderColor = Color(0xFF805306);
 
@@ -25,7 +25,7 @@ class MyApp extends StatelessWidget {
         width: 1,
         color: borderColor,
         child: Material(
-          child: Container(
+          child: DecoratedBox(
             decoration: const BoxDecoration(
                 backgroundBlendMode: BlendMode.multiply,
                 gradient: LinearGradient(
@@ -33,7 +33,7 @@ class MyApp extends StatelessWidget {
                   end: Alignment.bottomCenter,
                   colors: [kBackgroudStartColor, kBackgroundEndColor],
                   stops: [0.0, 1.0],
-                )),
+                ),),
             child: Column(
               children: [
                 WordStyleTitleBar(),
@@ -42,7 +42,7 @@ class MyApp extends StatelessWidget {
             ),
           ),
         ),
-      )),
+      ),),
     );
   }
 }

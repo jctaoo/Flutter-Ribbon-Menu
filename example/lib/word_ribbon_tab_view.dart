@@ -1,19 +1,19 @@
-import 'package:flutter/material.dart';
-import 'package:ribbon_menu/ribbon_tab_view.dart';
-import 'package:ribbon_menu/ribbon_tab.dart';
-import 'package:ribbon_menu/buttons/ribbon_button.dart';
-import 'package:ribbon_menu/ribbon_group.dart';
-import 'package:ribbon_menu/ribbon_small_button_column.dart';
-import 'package:ribbon_menu/ribbon_tab_controller.dart';
+import "package:flutter/material.dart";
+import "package:ribbon_menu/buttons/ribbon_button.dart";
+import "package:ribbon_menu/ribbon_group.dart";
+import "package:ribbon_menu/ribbon_small_button_column.dart";
+import "package:ribbon_menu/ribbon_tab.dart";
+import "package:ribbon_menu/ribbon_tab_controller.dart";
+import "package:ribbon_menu/ribbon_tab_view.dart";
 
 class WordRibbonTabView extends StatelessWidget {
-  final RibbonTabController controller;
-
-  const WordRibbonTabView({Key? key, required this.controller})
+  const WordRibbonTabView({required this.controller, Key? key})
       : super(key: key);
 
+  final RibbonTabController controller;
+
   @override
-  Widget build(context) {
+  Widget build(BuildContext context) {
     return RibbonTabView(
       controller: controller,
       tabs: [
@@ -36,7 +36,7 @@ class WordRibbonTabView extends StatelessWidget {
                 SmallRibbonButton(label: "Very long button", icon: Icons.paste)
               ],
             ),
-          ]),
+          ],),
           RibbonGroup(groupTitle: "Dropdown Test", children: [
             LargeRibbonDropdownButton(
                 icon: Icons.luggage_rounded,
@@ -44,20 +44,20 @@ class WordRibbonTabView extends StatelessWidget {
                 child: RibbonSmallButtonColumn(
                   decoration: BoxDecoration(
                       color: Colors.white,
-                      border: Border.all(color: Colors.grey)),
+                      border: Border.all(color: Colors.grey),),
                   children: const [
                     SmallRibbonButton(label: "Item 1", icon: Icons.kayaking),
                     SmallRibbonButton(label: "Item 2", icon: Icons.sports)
                   ],
-                )),
-          ])
-        ]),
+                ),),
+          ],)
+        ],),
         const RibbonTab(children: [
           SmallRibbonButton(
             label: "Empty Page",
             icon: Icons.pageview_outlined,
           )
-        ]),
+        ],),
       ],
     );
   }

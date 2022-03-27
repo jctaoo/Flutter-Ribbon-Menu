@@ -1,19 +1,18 @@
-import 'package:bitsdojo_window/bitsdojo_window.dart';
-import 'package:example/word_application_menu.dart';
-import 'package:example/word_ribbon_tab_view.dart';
-import 'package:flutter/foundation.dart';
-import 'package:flutter/material.dart';
-import 'package:ribbon_menu/ribbon_tab_bar.dart';
-import 'package:ribbon_menu/ribbon_tab_controller.dart';
-
-import 'mainview.dart';
-import 'window_buttons.dart';
+import "package:bitsdojo_window/bitsdojo_window.dart";
+import "package:example/mainview.dart";
+import "package:example/window_buttons.dart";
+import "package:example/word_application_menu.dart";
+import "package:example/word_ribbon_tab_view.dart";
+import "package:flutter/foundation.dart";
+import "package:flutter/material.dart";
+import "package:ribbon_menu/ribbon_tab_bar.dart";
+import "package:ribbon_menu/ribbon_tab_controller.dart";
 
 class WordStyleTitleBar extends StatelessWidget {
+  WordStyleTitleBar({Key? key}) : super(key: key);
+
   final double titleBarHeight = 156;
   final RibbonTabController controller = RibbonTabController(0);
-
-  WordStyleTitleBar({Key? key}) : super(key: key);
 
   ThemeData _buildTheme(context) {
     return Theme.of(context).copyWith(
@@ -24,7 +23,7 @@ class WordStyleTitleBar extends StatelessWidget {
         buttonTheme: const ButtonThemeData(
           textTheme: ButtonTextTheme.primary,
           splashColor: Colors.red,
-        ));
+        ),);
   }
 
   @override
@@ -39,17 +38,17 @@ class WordStyleTitleBar extends StatelessWidget {
           child: DecoratedBox(
               decoration: const BoxDecoration(
                   border:
-                      Border(bottom: BorderSide(color: Colors.grey, width: 1))),
+                      Border(bottom: BorderSide(color: Colors.grey)),),
               child: Column(
                 children: [
-                  Container(
+                  DecoratedBox(
                     decoration: BoxDecoration(
                         color: kRibbonColor,
                         image: DecorationImage(
                             alignment: Alignment.centerRight,
                             image: Image.asset(
                               "assets/geometric-shapes-alpha.png",
-                            ).image)),
+                            ).image,),),
                     child: Column(
                       children: [
                         SizedBox(
@@ -68,10 +67,10 @@ class WordStyleTitleBar extends StatelessWidget {
                               ),
                               const Padding(
                                 padding:
-                                    EdgeInsets.fromLTRB(0.0, 6.0, 0.0, 6.0),
+                                    EdgeInsets.fromLTRB(0, 6, 0, 6),
                               ),
                               const SizedBox(
-                                width: 6.0,
+                                width: 6,
                               ),
                               Expanded(
                                   child: MoveWindow(
@@ -84,7 +83,7 @@ class WordStyleTitleBar extends StatelessWidget {
                                     ),
                                   ),
                                 ),
-                              )),
+                              ),),
                               const WindowButtons()
                             ],
                           ),
@@ -93,7 +92,7 @@ class WordStyleTitleBar extends StatelessWidget {
                           child: RibbonTabBar(
                               ribbonTabController: controller,
                               applicationMenu: const WordApplicationMenu(),
-                              tabTitles: const ["File", "Start", "Paste"]),
+                              tabTitles: const ["File", "Start", "Paste"],),
                         )
                       ],
                     ),
@@ -102,7 +101,7 @@ class WordStyleTitleBar extends StatelessWidget {
                       child: WordRibbonTabView(controller: controller,),
                   )
                 ],
-              ))),
+              ),),),
     );
   }
 }

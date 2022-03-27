@@ -1,12 +1,12 @@
-import 'package:flutter/material.dart';
+import "package:flutter/material.dart";
 
 class AuxiliaryPaneNotifier extends ChangeNotifier {
-  Widget _currentAuxiliaryPane = Container();
-  final Widget basicAuxiliaryPane;
-
   AuxiliaryPaneNotifier(this.basicAuxiliaryPane) {
     _currentAuxiliaryPane = basicAuxiliaryPane;
   }
+
+  Widget _currentAuxiliaryPane = Container();
+  final Widget basicAuxiliaryPane;
 
   Widget get auxiliaryPane {
     return _currentAuxiliaryPane;
@@ -21,5 +21,4 @@ class AuxiliaryPaneNotifier extends ChangeNotifier {
     _currentAuxiliaryPane = basicAuxiliaryPane;
     notifyListeners();
   }
-
 }

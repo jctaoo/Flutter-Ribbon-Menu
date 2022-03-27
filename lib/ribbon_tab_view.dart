@@ -1,14 +1,17 @@
-import 'ribbon_tab_controller.dart';
-import 'package:flutter/material.dart';
+import "package:flutter/material.dart";
+import "package:ribbon_menu/ribbon_tab_controller.dart";
 
 /// The [RibbonTabView] handles all the tabs in the ribbon menu.
 class RibbonTabView extends StatefulWidget {
+  const RibbonTabView({
+    required this.controller,
+    required this.tabs,
+    Key? key,
+  }) : super(key: key);
+
   /// ValueNotifier that notifies listeners if the selected tab changes.
   final RibbonTabController controller;
   final List<Widget> tabs;
-
-  const RibbonTabView({Key? key, required this.controller, required this.tabs})
-      : super(key: key);
 
   @override
   State<RibbonTabView> createState() => _RibbonTabViewState();

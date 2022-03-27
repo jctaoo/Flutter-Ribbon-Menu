@@ -1,20 +1,22 @@
-import 'package:flutter/material.dart';
+import "package:flutter/material.dart";
 
 class RibbonSmallButtonColumn extends StatelessWidget {
-  final List<Widget> children;
-  final BoxDecoration? decoration;
-
-  const RibbonSmallButtonColumn(
-      {Key? key, required this.children, this.decoration})
-      : assert(children.length <= 3),
+  const RibbonSmallButtonColumn({
+    required this.children,
+    this.decoration,
+    Key? key,
+  })  : assert(children.length <= 3),
         assert(children.length > 0),
         super(key: key);
+
+  final List<Widget> children;
+  final BoxDecoration? decoration;
 
   @override
   Widget build(BuildContext context) {
     return IntrinsicWidth(
-      child: Container(
-        decoration: decoration,
+      child: DecoratedBox(
+        decoration: decoration ?? const BoxDecoration(),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: children,
