@@ -10,5 +10,5 @@ The mostly follows the implementation of the WPF ribbon controls for Windows wit
 - [x] Large and small ribbon buttons
 - [x] Large ribbon button as dropdown menu (thanks to [this](https://medium.com/saugo360/https-medium-com-saugo360-flutter-using-overlay-to-display-floating-widgets-2e6d0e8decb9) medium article from the creator of the flutter typeahead package)
 - [ ] Expanding menu on the first ribbon tab
-- [ ] Modern Office style backstage view
 - [ ] Fully implement an example ribbon menu like in Microsoft Word
+- [ ] Collapsible ribbon menu

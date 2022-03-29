@@ -80,11 +80,13 @@ class _RibbonTabBarState extends State<RibbonTabBar> {
           onPressed: () => _selectTab(i - 1),),);
     }
 
-    newList.add(const Expanded(
-      child: DecoratedBox(
-          decoration: BoxDecoration(
+    newList.add(Expanded(
+      // needed because DecoratedBox won't put the border in the same place.
+      // ignore: use_decorated_box
+      child: Container(
+          decoration: const BoxDecoration(
               border:
-                  Border(bottom: BorderSide(color: Colors.grey)),),),
+                  Border(bottom: const BorderSide(color: Colors.grey)),),),
     ),);
 
     return newList;
