@@ -21,28 +21,30 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-          body: WindowBorder(
-        width: 1,
-        color: borderColor,
-        child: Material(
-          child: DecoratedBox(
-            decoration: const BoxDecoration(
+        body: WindowBorder(
+          width: 1,
+          color: borderColor,
+          child: Material(
+            child: DecoratedBox(
+              decoration: const BoxDecoration(
                 backgroundBlendMode: BlendMode.multiply,
                 gradient: LinearGradient(
                   begin: Alignment.topCenter,
                   end: Alignment.bottomCenter,
                   colors: [kBackgroudStartColor, kBackgroundEndColor],
                   stops: [0.0, 1.0],
-                ),),
-            child: Column(
-              children: [
-                WordStyleTitleBar(),
-                Expanded(child: Container(color: Colors.amber))
-              ],
+                ),
+              ),
+              child: Column(
+                children: [
+                  WordStyleTitleBar(),
+                  Expanded(child: Container(color: Colors.white))
+                ],
+              ),
             ),
           ),
         ),
-      ),),
+      ),
     );
   }
 }
