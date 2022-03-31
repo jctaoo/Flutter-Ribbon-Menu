@@ -2,6 +2,7 @@ import "package:flutter/material.dart";
 import "package:provider/provider.dart";
 import "package:ribbon_menu/buttons/application_menu_button_interface.dart";
 import "package:ribbon_menu/ribbon_application_menu_auxiliary_pane_notifier.dart";
+import "package:ribbon_menu/ribbon_styles.dart";
 
 /// Provides a standard button for the application menu.
 ///
@@ -36,19 +37,21 @@ class RibbonApplicationMenuButton extends StatelessWidget
         }
       },
       child: TextButton(
-          onPressed: onPressed,
-          child: Padding(
-            padding: const EdgeInsets.fromLTRB(4, 12, 4, 12),
-            child: Row(
-              children: [
-                icon,
-                const SizedBox(
-                  width: 16,
-                ),
-                Text(label),
-              ],
-            ),
-          ),),
+        onPressed: onPressed,
+        style: kBasicButtonStyle,
+        child: Padding(
+          padding: const EdgeInsets.fromLTRB(4, 12, 4, 12),
+          child: Row(
+            children: [
+              icon,
+              const SizedBox(
+                width: 16,
+              ),
+              Text(label),
+            ],
+          ),
+        ),
+      ),
     );
   }
 }

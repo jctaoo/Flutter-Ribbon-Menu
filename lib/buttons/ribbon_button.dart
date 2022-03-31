@@ -1,4 +1,5 @@
 import "package:flutter/material.dart";
+import "package:ribbon_menu/ribbon_styles.dart";
 
 class LargeRibbonButton extends StatelessWidget {
   const LargeRibbonButton({
@@ -17,6 +18,7 @@ class LargeRibbonButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextButton(
+      style: kBasicButtonStyle,
       onPressed: onPressed ?? () {},
       child: Padding(
         padding: const EdgeInsets.fromLTRB(0, 2, 0, 2),
@@ -52,6 +54,7 @@ class SmallRibbonButton extends StatelessWidget {
     return SizedBox(
       height: 24,
       child: TextButton(
+        style: kBasicButtonStyle,
         onPressed: onPressed,
         child: Row(
           children: [
