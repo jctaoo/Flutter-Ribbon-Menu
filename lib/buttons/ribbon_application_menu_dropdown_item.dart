@@ -17,7 +17,7 @@ class RibbonApplicationMenuDropdownItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextButton(
       onPressed: onPressed,
-      style: kBasicButtonStyle,
+      style: kApplicationMenuButtonThemeData,
       child: Padding(
         padding: const EdgeInsets.fromLTRB(4, 12, 4, 12),
         child: Row(

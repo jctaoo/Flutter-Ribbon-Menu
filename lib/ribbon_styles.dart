@@ -1,6 +1,12 @@
 // Global button theme for mouse cursor
 import "package:flutter/material.dart";
 
+ButtonStyle kApplicationMenuButtonThemeData = kBasicButtonStyle.copyWith(
+  textStyle: MaterialStateProperty.resolveWith(
+    (states) => const TextStyle(fontSize: 11.5),
+  ),
+);
+
 ButtonStyle kBasicButtonStyle = ButtonStyle(
   mouseCursor:
       MaterialStateProperty.resolveWith((states) => SystemMouseCursors.basic),

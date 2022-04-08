@@ -1,6 +1,5 @@
 import "package:flutter/material.dart";
 import "package:provider/provider.dart";
-import "package:ribbon_menu/buttons/application_menu_button_interface.dart";
 import "package:ribbon_menu/ribbon_application_menu_auxiliary_pane_notifier.dart";
 import "package:ribbon_menu/ribbon_styles.dart";
 
@@ -9,8 +8,7 @@ import "package:ribbon_menu/ribbon_styles.dart";
 /// [onEnter] provides a function that should run when the mouse enters the
 /// widget.
 /// This could be used to show a custom auxiliary pane.
-class RibbonApplicationMenuButton extends StatelessWidget
-    implements IApplicationMenuButton {
+class RibbonApplicationMenuButton extends StatelessWidget {
   const RibbonApplicationMenuButton({
     required this.icon,
     Key? key,
@@ -19,11 +17,8 @@ class RibbonApplicationMenuButton extends StatelessWidget
     this.onEnter,
   }) : super(key: key);
 
-  @override
   final String label;
-  @override
   final Function()? onPressed;
-  @override
   final Icon icon;
   final Function()? onEnter;
 
@@ -38,7 +33,7 @@ class RibbonApplicationMenuButton extends StatelessWidget
       },
       child: TextButton(
         onPressed: onPressed,
-        style: kBasicButtonStyle,
+        style: kApplicationMenuButtonThemeData,
         child: Padding(
           padding: const EdgeInsets.fromLTRB(4, 12, 4, 12),
           child: Row(
