@@ -5,8 +5,8 @@ The mostly follows the implementation of the WPF ribbon controls for Windows wit
 
 Feel free to create pull requests, file issues or fork the project.
 
-![Ribbon menu screenshot](images/word_style_screenshot.png "Ribbon menu screenshot")
-![Example application menu screenshot](images/example-application-menu_screenshot.png "appication menu screenshot")
+  <img align="center" src="images/word_style_screenshot.png" />
+  <img align="center" src="images/example-application-menu_screenshot.png" />
 
 ## Features
 - Easy to implement Ribbon Menu commonly known from office products and other windows software to use in flutter
