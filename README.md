@@ -3,7 +3,10 @@ This package should enable you to use the ribbon menu from tools like Microsoft 
 
 The mostly follows the implementation of the WPF ribbon controls for Windows with a few changes.
 
-![Ribbon menu screenshot](images/word_style_screenshot.jpg "Screenshot")
+Feel free to create pull requests, file issues or fork the project.
+
+![Ribbon menu screenshot](images/word_style_screenshot.png "Ribbon menu screenshot")
+![Example application menu screenshot](images/example-application-menu_screenshot.png "appication menu screenshot")
 
 ## Features
 - Easy to implement Ribbon Menu commonly known from office products and other windows software to use in flutter
@@ -23,4 +26,4 @@ The mostly follows the implementation of the WPF ribbon controls for Windows wit
 - [ ] Automatic resizing if vertical space shrinks
 - [ ] Collapsible ribbon menu
 - [ ] Fully implement an example ribbon menu like in Microsoft Word
-- [ ] Support for keyboard shortcuts and <kbd>Alt</kbd> shortcuts
+- [ ] Support for normal keyboard shortcuts and <kbd>Alt</kbd> shortcuts

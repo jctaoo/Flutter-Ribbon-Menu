@@ -46,7 +46,8 @@ class WordApplicationMenu extends StatelessWidget {
           ],
         ),
         const Divider(
-          height: 8,
+          thickness: 0,
+          height: 4,
           indent: 52,
           color: Colors.grey,
         ),
@@ -62,20 +63,22 @@ class WordApplicationMenu extends StatelessWidget {
             color: Colors.blue,
           ),
           label: "Help",
-          items: const [
+          items: [
             RibbonApplicationMenuDropdownItem(
-              icon: Icon(
+              onPressed: () {},
+              icon: const Icon(
                 Icons.help,
                 color: Colors.blue,
               ),
               label: "Help",
             ),
             RibbonApplicationMenuDropdownItem(
-              icon: Icon(
+              onPressed: () {},
+              icon: const Icon(
                 Icons.info,
                 color: Colors.blue,
               ),
-              label: "About windows",
+              label: "About Windows",
             )
           ],
         ),

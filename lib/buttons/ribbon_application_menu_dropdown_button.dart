@@ -33,16 +33,19 @@ class RibbonApplicationMenuDropdownButton extends StatelessWidget {
         onPressed: onPressed,
         style: kApplicationMenuButtonThemeData,
         child: Padding(
-          padding: const EdgeInsets.fromLTRB(4, 12, 4, 12),
+          padding: const EdgeInsets.fromLTRB(0, 12, 4, 12),
           child: Row(
             children: [
               icon,
               const SizedBox(
-                width: 16,
+                width: 12,
               ),
               Text(label),
               const Spacer(),
-              const Icon(Icons.arrow_right),
+              const SizedBox(
+                width: 12,
+                child: Icon(Icons.arrow_right, size: 16),
+              ),
             ],
           ),
         ),

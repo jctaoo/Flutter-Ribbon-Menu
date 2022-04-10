@@ -54,22 +54,24 @@ class _RibbonApplicationMenuState extends State<RibbonApplicationMenu> {
                   },
                   color: const Color.fromARGB(255, 43, 87, 154),
                 ),
-                const Divider(color: Colors.grey, height: 1),
+                const Divider(color: Colors.grey, height: 1, thickness: 1),
                 IntrinsicHeight(
                   child: Row(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Flexible(
+                        flex: 48,
                         child: Column(
                           children: widget.menuItems,
                         ),
                       ),
                       const VerticalDivider(
                         color: Colors.grey,
-                        thickness: 0,
-                        width: 0,
+                        thickness: 1,
+                        width: 1,
                       ),
                       Flexible(
+                        flex: 52,
                         child: auxiliaryPaneNotifier.auxiliaryPane,
                       )
                     ],

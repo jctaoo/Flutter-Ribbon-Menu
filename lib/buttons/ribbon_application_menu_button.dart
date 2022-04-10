@@ -35,12 +35,12 @@ class RibbonApplicationMenuButton extends StatelessWidget {
         onPressed: onPressed,
         style: kApplicationMenuButtonThemeData,
         child: Padding(
-          padding: const EdgeInsets.fromLTRB(4, 12, 4, 12),
+          padding: const EdgeInsets.fromLTRB(0, 12, 4, 12),
           child: Row(
             children: [
               icon,
               const SizedBox(
-                width: 16,
+                width: 12,
               ),
               Text(label),
             ],
